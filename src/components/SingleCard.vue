@@ -16,8 +16,10 @@
       />
     </figure>
     <div class="card-body">
-      <h2 class="card-title text-2xl font-semibold">{{ treatment.title }}</h2>
-      <p class="text-lg">{{ treatment.body }}</p>
+      <h2 class="card-title text-xl font-semibold text-[#765288FF] text-nowrap">
+        {{ treatment.title }}
+      </h2>
+      <p class="text-lg text-[#df6589ff]">{{ treatment.body }}</p>
       <div class="card-actions justify-end">
         <span
           v-show="treatment.price.length > 2"

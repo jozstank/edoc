@@ -47,7 +47,7 @@
           @keyup.enter="handleEnter"
           v-model="generalStore.searchInputValue"
           type="text"
-          placeholder="Type here"
+          placeholder="Search treatment"
           @focus="selectAllText"
           class="input input-bordered input-info w-full max-w-xs"
         />

@@ -89,7 +89,7 @@
           @focus="selectAllText"
           v-model="generalStore.searchInputValue"
           type="text"
-          placeholder="Type here"
+          placeholder="Search treatment"
           class="input input-bordered input-info w-full max-w-xs"
         />
 
