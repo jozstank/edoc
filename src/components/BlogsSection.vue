@@ -35,21 +35,25 @@ export default {
       generalStore: useGeneralStore(),
       blogs: [
         {
+          id: 1,
           title: "Shoes!",
           body: "If a dog chews shoes whose shoes does he choose? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores incidunt cupiditate asperiores a dolorum, sed ut ab perspiciatis reprehenderit suscipit.",
           pic: "https://media.istockphoto.com/id/1048875936/photo/rejuvenating-facial-therapy-treatment-at-spa-salon-clinic-young-beautiful-asian-woman-getting.jpg?s=612x612&w=0&k=20&c=dmWGokgQDW7cItx4PP3R64cbKHWnP-oTN2zpWBPxPiA=",
         },
         {
+          id: 2,
           title: "Shoes!",
           body: "If a dog chews shoes whose shoes does he choose? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores incidunt cupiditate asperiores a dolorum, sed ut ab perspiciatis reprehenderit suscipit.",
           pic: "https://media.istockphoto.com/id/1434508434/photo/happy-beautiful-asian-woman-is-getting-facial-skin-and-against-wrinkle-treatment-by.jpg?s=612x612&w=0&k=20&c=yhBWCASUNcfy-nhY79jMRnrxcMhY0KkldMufpLLThJM=",
         },
         {
+          id: 3,
           title: "Shoes!",
           body: "If a dog chews shoes whose shoes does he choose? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores incidunt cupiditate asperiores a dolorum, sed ut ab perspiciatis reprehenderit suscipit.",
           pic: "https://media.istockphoto.com/id/1189482058/photo/asian-young-woman-gets-injection-in-her-lips-woman-in-beauty-salon-plastic-surgery-clinic.jpg?s=612x612&w=0&k=20&c=QLNRBIvoG0PXZ19kzxZN0aXczkc3AsaGKu3I1ml8NrU=",
         },
         {
+          id: 4,
           title: "Shoes!",
           body: "If a dog chews shoes whose shoes does he choose? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores incidunt cupiditate asperiores a dolorum, sed ut ab perspiciatis reprehenderit suscipit.",
           pic: "https://media.istockphoto.com/id/1488062353/photo/wash-hands-with-soap-and-wash-with-running-water-close-up-of-women-scrub-hand-soap-with-wash.jpg?s=612x612&w=0&k=20&c=zXqs3G5o8yKs73Sm_gnpoIu5b1IXLR8sCgrp9gMOCi4=",

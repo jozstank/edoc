@@ -21,8 +21,7 @@
     <div class="card-body items-center text-center p-0">
       <h2 class="card-title">{{ member.name }}</h2>
       <p class="">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
-        illo.
+        {{ member.bio }}
       </p>
       <div
         class="card-actions flex justify-center items-center gap-3 border-solid border-2 rounded-xl p-3"

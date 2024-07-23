@@ -147,7 +147,7 @@ export default {
           const result = item.title.toLowerCase().includes(s);
           return result;
         });
-        found.length > 3
+        found.length > 1
           ? (this.generalStore.isDropdownOpen = true)
           : (this.generalStore.isDropdownOpen = false);
         return found;

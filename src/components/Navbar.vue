@@ -63,7 +63,7 @@
           </li>
           <li>
             <a
-              href="https://www.google.co.uk/"
+              href="http://localhost:8000/login.php"
               target="_blank"
               :class="{
                 'hover:text-red-400': !generalStore.isSun,
@@ -107,7 +107,7 @@
       </div>
 
       <router-link
-        to="/search"
+        :to="passToSearchRoute"
         class="btn btn-ghost btn-circle"
         @click="searchIng"
       >
@@ -177,6 +177,9 @@ export default {
   },
 
   computed: {
+    passToSearchRoute() {
+      return this.generalStore.searchInputValue === "" ? "#" : "/search";
+    },
     strokeColor() {
       return this.generalStore.isSun ? "currentColor" : "white";
     },
@@ -189,7 +192,7 @@ export default {
 
           return result;
         });
-        found.length > 3
+        found.length > 1
           ? (this.generalStore.isDropdownOpen = true)
           : (this.generalStore.isDropdownOpen = false);
         return found;
@@ -220,13 +223,17 @@ export default {
     },
 
     searchIng() {
-      const s = this.generalStore.searchInputValue.toLowerCase();
-      const found = this.generalStore.treatments.filter((item) => {
-        const result = item.title.toLowerCase().includes(s);
-        return result;
-      });
-      this.generalStore.updateSearchArr(found);
-      this.generalStore.isDropdownOpen = false;
+      if (this.generalStore.searchInputValue === "") {
+        return;
+      } else {
+        const s = this.generalStore.searchInputValue.toLowerCase();
+        const found = this.generalStore.treatments.filter((item) => {
+          const result = item.title.toLowerCase().includes(s);
+          return result;
+        });
+        this.generalStore.updateSearchArr(found);
+        this.generalStore.isDropdownOpen = false;
+      }
     },
 
     selectAllText(event) {
@@ -234,9 +241,13 @@ export default {
     },
 
     handleEnter() {
-      this.searchIng();
-      this.$router.push(`/search`);
-      this.generalStore.isDropdownOpen = false;
+      if (this.generalStore.searchInputValue === "") {
+        return;
+      } else {
+        this.searchIng();
+        this.$router.push(`/search`);
+        this.generalStore.isDropdownOpen = false;
+      }
     },
   },
 };
