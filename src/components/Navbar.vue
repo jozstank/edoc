@@ -76,11 +76,11 @@
       </div>
     </div>
     <div class="navbar-center">
-      <a
-        href="/"
-        class="btn font-semibold btn-ghost text-2xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text"
-        >Luxury Aesthetic</a
+      <div
+        class="w-full h-full flex justify-center items-center font-semibold btn-ghost bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text"
       >
+        <h1 id="typewriter" class="text-5xl font-bold">{{ displayedText }}</h1>
+      </div>
     </div>
     <div class="navbar-end flex justify-end items-center pr-10">
       <div class="">
@@ -173,6 +173,12 @@ export default {
         contact: "Contact",
       },
       generalStore: useGeneralStore(),
+      words: ["Welcome to", "LUXURY AESTHETIC", "online clinic systen"],
+      i: 0,
+      j: 0,
+      currentWord: "",
+      isDeleting: false,
+      displayedText: "",
     };
   },
 
@@ -206,6 +212,7 @@ export default {
   },
   mounted() {
     document.addEventListener("click", this.handleClickOutside);
+    this.type();
   },
   beforeDestroy() {
     document.removeEventListener("click", this.handleClickOutside);
@@ -248,6 +255,28 @@ export default {
         this.$router.push(`/search`);
         this.generalStore.isDropdownOpen = false;
       }
+    },
+
+    type() {
+      this.currentWord = this.words[this.i];
+      if (this.isDeleting) {
+        this.displayedText = this.currentWord.substring(0, this.j - 1);
+        this.j--;
+        if (this.j == 0) {
+          this.isDeleting = false;
+          this.i++;
+          if (this.i == this.words.length) {
+            this.i = 0;
+          }
+        }
+      } else {
+        this.displayedText = this.currentWord.substring(0, this.j + 1);
+        this.j++;
+        if (this.j == this.currentWord.length) {
+          this.isDeleting = true;
+        }
+      }
+      setTimeout(this.type, 150);
     },
   },
 };
