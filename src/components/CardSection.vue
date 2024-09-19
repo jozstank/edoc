@@ -1,8 +1,9 @@
 <template>
   <section class="mt-5">
-    <span class="ml-5 text-xl text-[#FE7865] font-bold" id="treatmentsSection"
-      >Treatments & Products</span
+    <span class="mx-auto mb-4 block w-fit text-3xl text-[#FE7865] font-bold"
+      >Treatments</span
     >
+    <div class="w-full h-1 rounded-lg bg-[#fe7865]"></div>
     <div class="mt-10 flex justify-center gap-3 m-auto flex-wrap">
       <SingleCard
         v-for="(treatment, index) in generalStore.treatments"
@@ -27,21 +28,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#treatmentsSection {
-  position: relative;
-  padding-left: 370px;
-}
-
-#treatmentsSection:before {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  left: 0;
-  width: 300px;
-  height: 2px;
-  background: #fe7865;
-  transform: translateY(50%);
-}
-</style>

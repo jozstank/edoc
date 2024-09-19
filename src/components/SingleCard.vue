@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return `@/../public/images/t${this.treatment.id}.png`;
+      return `/images/t${this.treatment.id}.png`;
     },
   },
   props: {
